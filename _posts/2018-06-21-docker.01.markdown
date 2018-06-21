@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "docker 开发指南 ， 读书笔记 01"
+date:   2018-06-21 15:23:58 +0800
+categories: docker
+---
+
+docker 小记
+
+初学者建议SELinux 设置成0 ， 执行
+{% highlight bash %}
+sestatus
+查看SELinux 处在的模式中
+sudo setenforce 0 
+{% endhighlight %}
+
+2.1.2 不用sudo命令执行Docker
+把当前用户放入 docker用户组里面，如果docker组不纯正，会新建该组。重启服务。
+{% highlight bash %}
+$sudo usermod -aG docker $USER
+$sudo server docker restart
+{% endhighlight %}
+
+
+Check out the [Dockers docs][dockers-docs] for more info on how to get the most out of Dockers. 
+
+[dockers-docs]: https://docs.docker.com/
